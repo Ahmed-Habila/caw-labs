@@ -1,5 +1,5 @@
 const fs = require('fs')
 
 
-const data = fs.readFileSync('./newtxt.txt', 'utf8');
+const data = fs.readFileSync('./filer.txt', 'utf8');
 console.log(data);
