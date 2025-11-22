@@ -1,0 +1,36 @@
+.page {
+  padding: 24px;
+  margin: 0 auto;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  color: #0a2828;
+}
+
+.sub-nav {
+  margin-bottom: 12px;
+}
+.sub-nav a {
+  color: #0ea5a4;
+  text-decoration: none;
+  font-weight: 600;
+}
+.sub-nav a:hover { 
+  text-decoration: underline; 
+}
+
+.section {
+  padding: 16px;
+  margin: 14px 0;
+  min-width: 400px;
+  border-radius: 10px;
+  background: #c4c7b185;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.section h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.05rem;
+  color: #455957;
+}
+.small { 
+  font-size: 0.9rem; color: #64748b; 
+}

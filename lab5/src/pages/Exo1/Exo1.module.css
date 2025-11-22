@@ -1,0 +1,93 @@
+.page {
+  padding: 24px;
+  margin: 0 auto;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  color: #0a2828;
+}
+
+.sub-nav {
+  margin-bottom: 12px;
+}
+.sub-nav a {
+  color: #0ea5a4;
+  text-decoration: none;
+  font-weight: 600;
+}
+.sub-nav a:hover { 
+  text-decoration: underline; 
+}
+
+.section {
+  padding: 16px;
+  margin: 14px 0;
+  border-radius: 10px;
+  background: #c4c7b185;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.section h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.05rem;
+  color: #455957;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.button1 {
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 30px;
+  background: #7ba7af;
+  color: #e2e4d2;
+  cursor: pointer;
+  font-weight: 600;
+  min-width: 100px;
+  transition: background 120ms ease, transform 90ms ease, box-shadow 120ms ease;
+}
+.button1:hover {
+  background: #709ca5;
+}
+
+.result {
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.counter {
+  font-size: 2rem;
+  margin: 8px 0;
+}
+
+.my-toggle {
+  width: 44px;
+  height: 28px;
+  padding: 0;
+  border-radius: 8px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.my-toggle[data-toggled="true"] {
+  background: linear-gradient(90deg,#06b6d4,#0ea5a4);
+  border-color: transparent;
+  box-shadow: 0 2px 6px rgba(14,165,164,0.18);
+}
+.my-toggle[data-toggled="false"] {
+  background: #ffffff;
+  border-color: #cbd5e1;
+}
+
+.small { 
+  font-size: 0.9rem; color: #64748b; 
+}
+.center { 
+  text-align: center; 
+}

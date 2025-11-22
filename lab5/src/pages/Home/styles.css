@@ -1,0 +1,33 @@
+.page { padding: 20px; font-family: Arial, sans-serif; }
+.home-page ul { list-style: none; padding: 0; }
+.home-page li { margin: 8px 0; }
+
+.section {
+  padding: 16px;
+  min-width: 600px;
+  margin: 14px 0;
+  border-radius: 10px;
+  background: #c4c7b185;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.section h1 {
+  margin: 0 0 10px 0;
+  font-size: 1.05rem;
+  color: #455957;
+}
+
+.section ul {
+  padding-left: 18px;
+}
+
+.section a {
+  color: #455957;
+  text-decoration: none;
+  font-weight: 600;
+}
+.section a:hover { text-decoration: underline; }
+
+body {
+  background: #e2e4d2;
+}
