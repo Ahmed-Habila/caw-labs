@@ -57,6 +57,43 @@
   background: #709ca5;
 }
 
+.button2 {
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 30px;
+  background: #47b55f;
+  color: #e2e4d2;
+  cursor: pointer;
+  font-weight: 600;
+  min-width: 100px;
+  transition: background 120ms ease, transform 90ms ease, box-shadow 120ms ease;
+}
+.button2:hover {
+  background: rgb(65, 171, 88);
+}
+
+.button3 {
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 30px;
+  background: #e2654e;
+  color: #e2e4d2;
+  cursor: pointer;
+  font-weight: 600;
+  min-width: 100px;
+  transition: background 120ms ease, transform 90ms ease, box-shadow 120ms ease;
+}
+.button3:hover {
+  background: #d15944;
+}
+
+
 .result {
   margin-top: 10px;
   font-weight: 700;

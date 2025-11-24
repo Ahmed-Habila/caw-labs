@@ -1,0 +1,19 @@
+.page {
+  padding: 32px;
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  color: #0f1a15;
+}
+
+.subNav { margin-bottom: 12px; }
+.subNav a { color: #455957; text-decoration: none; font-weight: 600; }
+.subNav a:hover { text-decoration: underline; }
+
+.section {
+  padding: 16px;
+  margin: 14px 0;
+  border-radius: 10px;
+  background: #a2a5908e;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}

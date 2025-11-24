@@ -36,8 +36,8 @@ export default function Exo1() {
         <h2>Counter</h2>
         <h1 className={styles.counter}>{counter}</h1>
         <div className={styles.buttons}>
-          <button className={styles.button1} onClick={() => setCounter(v => v + 1)}>Inc</button>
-          <button className={styles.button1} onClick={() => setCounter(v => v - 1)}>Dec</button>
+          <button className={styles.button2} onClick={() => setCounter(v => v + 1)}>Inc</button>
+          <button className={styles.button3} onClick={() => setCounter(v => v - 1)}>Dec</button>
         </div>
       </section>
     </div>
