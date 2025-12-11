@@ -12,6 +12,7 @@ function App() {
       title,
       description,
       status: 'To Do',
+      labels: [],
     };
     setTasks([...tasks, newTask]);
   };
@@ -24,6 +25,18 @@ function App() {
 
   const deleteTask = (taskId) => {
     setTasks(tasks.filter(task => task.id !== taskId));
+  };
+
+  const addLabel = (taskId, labelText, labelColor) => {
+    setTasks(tasks.map(task => {
+      if (task.id === taskId) {
+        return {
+          ...task,
+          labels: [...(task.labels || []), { text: labelText, color: labelColor }]
+        };
+      }
+      return task;
+    }));
   };
 
   return (
@@ -44,6 +57,7 @@ function App() {
             tasks={tasks.filter(t => t.status === 'To Do')}
             onMove={moveTask}
             onDelete={deleteTask}
+            onAddLabel={addLabel}
           />
           <Column
             title="In Progress"
@@ -51,6 +65,7 @@ function App() {
             tasks={tasks.filter(t => t.status === 'In Progress')}
             onMove={moveTask}
             onDelete={deleteTask}
+            onAddLabel={addLabel}
           />
           <Column
             title="Done"
@@ -58,6 +73,7 @@ function App() {
             tasks={tasks.filter(t => t.status === 'Done')}
             onMove={moveTask}
             onDelete={deleteTask}
+            onAddLabel={addLabel}
           />
         </div>
       </div>

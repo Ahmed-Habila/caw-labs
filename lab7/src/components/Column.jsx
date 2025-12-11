@@ -1,7 +1,7 @@
 import './Column.css';
 import TaskCard from './TaskCard';
 
-const Column = ({ title, status, tasks, onMove, onDelete }) => {
+const Column = ({ title, status, tasks, onMove, onDelete, onAddLabel }) => {
     const getBadgeColor = (status) => {
         switch (status) {
             case 'To Do': return 'todo-badge';
@@ -24,6 +24,7 @@ const Column = ({ title, status, tasks, onMove, onDelete }) => {
                         task={task}
                         onMove={onMove}
                         onDelete={onDelete}
+                        onAddLabel={onAddLabel}
                     />
                 ))}
                 {tasks.length === 0 && (

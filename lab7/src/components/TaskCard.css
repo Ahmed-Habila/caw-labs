@@ -5,6 +5,8 @@
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
     transition: transform 0.2s, box-shadow 0.2s;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
 }
 
 .task-card:hover {
@@ -18,6 +20,20 @@
     font-size: 1rem;
     font-weight: 600;
     color: var(--text-primary);
+}
+
+.task-labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.task-label {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-weight: 500;
 }
 
 .task-description {
@@ -34,9 +50,11 @@
     margin-top: auto;
 }
 
-.move-actions {
+.move-actions,
+.right-actions {
     display: flex;
     gap: 0.5rem;
+    align-items: center;
 }
 
 .action-btn {
@@ -64,4 +82,24 @@
 .delete-btn:hover {
     color: var(--danger-color);
     background-color: rgba(239, 68, 68, 0.1);
+}
+
+.label-form {
+    margin-top: 0.5rem;
+}
+
+.label-input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    padding: 0.3rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    box-sizing: border-box;
+}
+
+.label-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
 }

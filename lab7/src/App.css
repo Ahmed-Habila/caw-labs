@@ -38,6 +38,8 @@
   padding-bottom: 1rem;
   flex: 1;
   align-items: flex-start;
+  justify-content: center;
+  /* Center the columns */
 }
 
 @media (max-width: 768px) {
