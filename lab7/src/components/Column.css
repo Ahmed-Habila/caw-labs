@@ -7,9 +7,10 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     flex-shrink: 0;
     height: fit-content;
+    border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 .column-header {
@@ -18,37 +19,37 @@
     align-items: center;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .column-title {
     margin: 0;
     font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text-primary);
+    font-weight: 700;
+    color: #134e4a;
+    /* Darker teal for title text */
 }
 
 .task-count {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 0.2rem 0.6rem;
     border-radius: 12px;
     font-size: 0.8rem;
-    font-weight: 500;
+    font-weight: 700;
+    color: #134e4a;
 }
 
+/* Badges - keeping subtle */
 .todo-badge {
-    background-color: rgba(96, 165, 250, 0.2);
-    color: #60a5fa;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .progress-badge {
-    background-color: rgba(250, 204, 21, 0.2);
-    color: #facc15;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .done-badge {
-    background-color: rgba(74, 222, 128, 0.2);
-    color: #4ade80;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .column-content {
@@ -64,4 +65,5 @@
     font-size: 0.9rem;
     margin-top: 2rem;
     font-style: italic;
+    opacity: 0.7;
 }

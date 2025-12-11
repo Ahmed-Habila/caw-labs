@@ -12,10 +12,12 @@
   margin-bottom: 2rem;
   font-size: 2.8rem;
   font-weight: 700;
-  background: linear-gradient(to right, #00d5ff, #ff28f8);
+  color: #35C8B4;
+  background: linear-gradient(to right, #35C8B4, #ebf92d);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .main-content {
