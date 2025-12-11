@@ -8,7 +8,6 @@ const TaskCard = ({ task, onMove, onDelete, onAddLabel }) => {
     const handleAddLabel = (e) => {
         e.preventDefault();
         if (labelText.trim()) {
-            // Pick a random color for now or default
             const colors = ['#ef4444', '#f59e0b', '#10b981', '#3b82f6', '#8b5cf6', '#ec4899'];
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
             onAddLabel(task.id, labelText.trim(), randomColor);
