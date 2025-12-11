@@ -1,0 +1,112 @@
+.task-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 0.8rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.task-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.task-content {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.task-labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-top: 0.2rem;
+}
+
+.task-label {
+    font-size: 0.75rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.task-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.task-card:hover .task-controls {
+    opacity: 1;
+}
+
+.move-select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    border-radius: 4px;
+    padding: 0.2rem;
+    font-size: 0.8rem;
+    max-width: 100px;
+    outline: none;
+}
+
+.move-select:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.icon-actions {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    border-radius: 4px;
+    padding: 0.2rem 0.4rem;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.icon-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.delete-btn:hover {
+    color: var(--danger-color);
+}
+
+.label-form {
+    display: flex;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+}
+
+.label-input {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.2rem;
+    border-radius: 4px;
+    width: 0;
+    /* Let flex control width */
+}
+
+.label-submit {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+}
