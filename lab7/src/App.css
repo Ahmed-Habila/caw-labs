@@ -88,10 +88,13 @@
 .board {
   display: flex;
   gap: 1.5rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-  flex: 1;
+  flex-wrap: wrap;
+  /* Allow wrapping to next line */
   align-items: flex-start;
+  padding-bottom: 2rem;
+  overflow-y: auto;
+  /* Scroll vertically if needed */
+  max-width: 100%;
 }
 
 .board::-webkit-scrollbar {

@@ -8,11 +8,7 @@ const INITIAL_COLUMNS = [
   { id: 'col-3', title: 'Done' },
 ];
 
-const INITIAL_TASKS = [
-  { id: 1, content: 'Learn React', columnId: 'col-1', labels: [] },
-  { id: 2, content: 'Setup Vite', columnId: 'col-3', labels: [{ text: 'Dev', color: '#3b82f6' }] },
-  { id: 3, content: 'Build Kanban', columnId: 'col-2', labels: [] },
-];
+const INITIAL_TASKS = [];
 
 function App() {
   const [columns, setColumns] = useState(INITIAL_COLUMNS);
