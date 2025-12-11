@@ -1,92 +1,42 @@
-import { useState } from 'react';
 import './TaskCard.css';
 
-const TaskCard = ({ task, currentColumnId, allColumns, onMove, onDelete, onAddLabel }) => {
-    const [showLabelInput, setShowLabelInput] = useState(false);
-    const [newLabelText, setNewLabelText] = useState('');
-
-    const handleAddLabel = (e) => {
-        e.preventDefault();
-        if (newLabelText.trim()) {
-            // Generate a random color or pick from a set
-            const colors = ['#3b82f6', '#10b981', '#ef4444', '#f59e0b', '#8b5cf6', '#ec4899'];
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-
-            onAddLabel(task.id, newLabelText.trim(), randomColor);
-            setNewLabelText('');
-            setShowLabelInput(false);
-        }
-    };
-
-    const handleMoveChange = (e) => {
-        if (e.target.value) {
-            onMove(task.id, e.target.value);
-        }
-    }
-
+const TaskCard = ({ task, onMove, onDelete }) => {
     return (
         <div className="task-card">
-            <div className="task-content">
-                {task.content}
-            </div>
+            <h3 className="task-title">{task.title}</h3>
+            <p className="task-description">{task.description}</p>
 
-            {task.labels && task.labels.length > 0 && (
-                <div className="task-labels">
-                    {task.labels.map((label, index) => (
-                        <span
-                            key={index}
-                            className="task-label"
-                            style={{ backgroundColor: label.color + '40', color: label.color }}
+            <div className="task-actions">
+                <div className="move-actions">
+                    {task.status !== 'To Do' && (
+                        <button
+                            className="action-btn back-btn"
+                            onClick={() => onMove(task.id, task.status === 'Done' ? 'In Progress' : 'To Do')}
+                            title="Move Back"
                         >
-                            {label.text}
-                        </span>
-                    ))}
-                </div>
-            )}
+                            ←
+                        </button>
+                    )}
 
-            <div className="task-controls">
-                <select
-                    className="move-select"
-                    value={currentColumnId}
-                    onChange={handleMoveChange}
-                    onClick={(e) => e.stopPropagation()} // Prevent card click if implemented later
+                    {task.status !== 'Done' && (
+                        <button
+                            className="action-btn forward-btn"
+                            onClick={() => onMove(task.id, task.status === 'To Do' ? 'In Progress' : 'Done')}
+                            title="Move Forward"
+                        >
+                            →
+                        </button>
+                    )}
+                </div>
+
+                <button
+                    className="delete-btn"
+                    onClick={() => onDelete(task.id)}
+                    title="Delete Task"
                 >
-                    {allColumns.map(col => (
-                        <option key={col.id} value={col.id}>{col.id === currentColumnId ? 'Move to...' : col.title}</option>
-                    ))}
-                </select>
-
-                <div className="icon-actions">
-                    <button
-                        className="icon-btn label-btn"
-                        onClick={() => setShowLabelInput(!showLabelInput)}
-                        title="Add Label"
-                    >
-                        🏷️
-                    </button>
-                    <button
-                        className="icon-btn delete-btn"
-                        onClick={() => onDelete(task.id)}
-                        title="Delete"
-                    >
-                        ×
-                    </button>
-                </div>
+                    ×
+                </button>
             </div>
-
-            {showLabelInput && (
-                <form onSubmit={handleAddLabel} className="label-form">
-                    <input
-                        autoFocus
-                        type="text"
-                        placeholder="Label..."
-                        value={newLabelText}
-                        onChange={(e) => setNewLabelText(e.target.value)}
-                        className="label-input"
-                    />
-                    <button type="submit" className="label-submit">Add</button>
-                </form>
-            )}
         </div>
     );
 };

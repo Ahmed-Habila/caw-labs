@@ -4,37 +4,35 @@ import React from 'react';
 
 const mockTask = {
     id: 1,
-    content: 'Simple Task',
-    columnId: 'col-1',
-    labels: []
+    title: 'Test Task',
+    description: 'Test Description',
+    status: 'To Do',
 };
 
-const mockColumns = [
-    { id: 'col-1', title: 'To Do' },
-    { id: 'col-2', title: 'Done' }
-];
-
 describe('TaskCard Component', () => {
-    test('renders content', () => {
-        render(<TaskCard task={mockTask} currentColumnId="col-1" allColumns={mockColumns} />);
-        expect(screen.getByText('Simple Task')).toBeInTheDocument();
+    test('renders task details', () => {
+        render(<TaskCard task={mockTask} />);
+        expect(screen.getByText('Test Task')).toBeInTheDocument();
+        expect(screen.getByText('Test Description')).toBeInTheDocument();
     });
 
-    test('can move task via dropdown', () => {
+    test('calls onMove when arrow button is clicked', () => {
         const onMove = jest.fn();
-        render(
-            <TaskCard
-                task={mockTask}
-                currentColumnId="col-1"
-                allColumns={mockColumns}
-                onMove={onMove}
-            />
-        );
+        render(<TaskCard task={mockTask} onMove={onMove} />);
 
-        // Find select
-        const select = screen.getByRole('combobox');
-        fireEvent.change(select, { target: { value: 'col-2' } });
+        const forwardBtn = screen.getByTitle('Move Forward');
+        fireEvent.click(forwardBtn);
 
-        expect(onMove).toHaveBeenCalledWith(1, 'col-2');
+        expect(onMove).toHaveBeenCalledWith(1, 'In Progress');
+    });
+
+    test('calls onDelete when delete button is clicked', () => {
+        const onDelete = jest.fn();
+        render(<TaskCard task={mockTask} onDelete={onDelete} />);
+
+        const deleteBtn = screen.getByTitle('Delete Task');
+        fireEvent.click(deleteBtn);
+
+        expect(onDelete).toHaveBeenCalledWith(1);
     });
 });
